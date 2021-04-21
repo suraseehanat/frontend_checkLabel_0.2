@@ -42,7 +42,7 @@ export const login = ({ username, password, history }) => {
       dispatch(setStateToFailed(msg));
     } else {
       localStorage.setItem(LOGIN_STATUS, "success");
-      dispatch(setStateToSuccess("success"));
+      dispatch(setStateToSuccess({username: username}));
       history.push("/TagScan");
     }
   };

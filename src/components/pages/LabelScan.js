@@ -37,7 +37,9 @@ export default function LabelScan(props) {
   const labelscanReducer = useSelector(
     ({ labelscanReducer }) => labelscanReducer
   );
+  const loginReducer = useSelector(({loginReducer}) => loginReducer);
   console.log(tagscanReducer.result);
+  console.log(loginReducer.result);
   const [inputBarcode, setBarcode] = React.useState();
   const [inputBarcode2,setBarcode2] = React.useState();
   const handleSave = async () => {
@@ -52,7 +54,7 @@ export default function LabelScan(props) {
       zscqty: labelscanReducer.countScan,
       zlbgood: labelscanReducer.countCorrect,
       zlbwaste: labelscanReducer.countInCorrect,
-      bname: "test",
+      bname: loginReducer.result.username,
       zdatchk: moment().format("YYYYMMDD"),
     });
     dispatch(labelscanActions.count_clear({ ...props }));
