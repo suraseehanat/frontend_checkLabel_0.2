@@ -28,8 +28,9 @@ export const setStateToSuccess = (payload) => ({
       try{
       console.log(inputTagScan)
       var TAG = inputTagScan.slice(-10);
-      console.log (TAG)
-      var result = await axios.get(`/apis/getTAG/${TAG}`);
+      var LOT = inputTagScan.slice(21,31)
+      
+      var result = await axios.get(`/apis/getTAG/${TAG}/${LOT}`);
       console.log(result.data);
       if (result.data != ""){
       dispatch(setStateToSuccess(result.data));

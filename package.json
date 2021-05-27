@@ -2,7 +2,7 @@
   "name": "frontend-chklable-v2",
   "version": "0.1.0",
   "private": true,
-  "proxy": "http://192.168.24.102:5001",
+  "proxy": "http://localhost:5001",
   "dependencies": {
     "@material-ui/core": "^4.11.2",
     "@material-ui/icons": "^4.11.2",
